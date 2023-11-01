@@ -1,0 +1,27 @@
+console:
+  config:
+    kafka:
+      brokers:
+      - kafka-kafka-bootstrap.kafka.svc.cluster.local:9092
+      # sasl:
+      #   enabled: true
+      #   mechanism: SCRAM-SHA-512
+      #   username: schema-registry-demo-admin
+      schemaRegistry:
+        enabled: true
+        urls:
+        - http://3.135.202.131:30081/
+image:
+  registry: vectorized
+  repository: console
+  tag: v2.2.2
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+  nodePort: 30080
+  type: NodePort
+# secret:
+#   create: true
+#   kafka:
+#     saslPassword: demoadmin

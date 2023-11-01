@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: database
+spec:
+  accessModes:
+    - ReadWriteOnce  # Access mode for the PVC (e.g., ReadWriteOnce, ReadOnlyMany, ReadWriteMany)
+  storageClassName: postgres-manual  # Storage class name (matches a StorageClass defined in the cluster)
+  resources:
+    requests:
+      storage: 15Gi  # Requested storage size

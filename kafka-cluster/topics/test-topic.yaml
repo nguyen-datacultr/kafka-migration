@@ -1,0 +1,12 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  namespace: kafka
+  name: test-topic
+  labels:
+    strimzi.io/cluster: "kafka"
+  annotations:
+    description: "This topic is used to test kafka connection"
+spec:
+  partitions: 3
+  replicas: 1

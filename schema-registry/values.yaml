@@ -1,0 +1,14 @@
+kafka:
+  enabled: false
+  auth:
+    protocol: plaintext
+  service:
+    ports:
+      client: 30094
+externalKafka:
+  brokers:
+    - PLAINTEXT://3.135.202.131:30094
+service:
+  type: NodePort
+  nodePorts:
+    http: 30081
